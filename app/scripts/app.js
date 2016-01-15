@@ -25,3 +25,7 @@
 		.module('blocJams', ['ui.router'])
 		.config(config);
 })();
+
+// providers are config objects for the services
+// example the stateProvider has a state service 
+// ever provider has a state service 
