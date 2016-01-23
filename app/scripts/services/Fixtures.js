@@ -36,10 +36,20 @@
 			return albumPicasso;
 		}
 
+		Fixtures.getCollection = function(numberOfAlbums) {
+			// this should return an array with the number of albumPicasso objects pushed in
+			console.log('the number of objects', numberOfAlbums);
+			var albums = [];
+			for (var i = 0; i < numberOfAlbums; i++) {
+				albums.push(angular.copy(albumPicasso));
+			}
+			return albums;
+		}
+
 		return Fixtures;
 	}
 
 	angular
 		.module('blocJams')
-		.factory('Fixtures', Fixtures)
-})
+		.factory('Fixtures', Fixtures);
+})(); //WHY - do you call the method 
