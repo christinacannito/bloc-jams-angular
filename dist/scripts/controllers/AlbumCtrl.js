@@ -1,7 +1,7 @@
 (function(){
-	function AlbumCtrl() {
+	function AlbumCtrl(Fixtures) {
 		this.albumData = [];
-		this.albumData.push(angular.copy(albumPicasso)); // this is that albumPicasso object
+		this.albumData.push(angular.copy(albumPicasso));
 	}
 
 	angular
