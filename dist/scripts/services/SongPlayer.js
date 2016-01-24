@@ -29,6 +29,13 @@
 			SongPlayer.currentSong = song;
 		}
 
+		// private function that will stop the current song
+		var stopSong = function(song) {
+			console.log('inside the stop song function');
+			currentBuzzObject.stop();
+			song.playing = null;
+		}
+
 		/**
 			@function playSong
 			@desc Plays the current song and sets playing to true
@@ -73,8 +80,25 @@
    		var currentSongIndex = getSongIndex(SongPlayer.currentSong);
    		currentSongIndex--;
    		if ( currentSongIndex < 0 ) {
-   			currentBuzzObject.stop();
-   			SongPlayer.currentSong.playing = null;
+   			console.log('in if of previous')
+   			stopSong(song);
+   			// currentBuzzObject.stop();
+   			// SongPlayer.currentSong.playing = null;
+   		} else {
+   			var song = currentAlbum.songs[currentSongIndex];
+   			setSong(song);
+   			playSong(song);
+   		}
+   	};
+
+   	SongPlayer.next  = function (song) {
+   		console.log('in the next function')
+   		var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+   		currentSongIndex++;
+   		if ( currentSongIndex > currentAlbum.songs.length ) {
+   			stopSong(song);
+   			// currentBuzzObject.stop();
+   			// SongPlayer.currentSong.playing = null;
    		} else {
    			var song = currentAlbum.songs[currentSongIndex];
    			setSong(song);
