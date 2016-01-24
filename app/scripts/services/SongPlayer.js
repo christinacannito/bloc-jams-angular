@@ -28,6 +28,12 @@
 			currentSong = song;
 		}
 
+		/**
+			@function playSong
+			@desc Plays the current song and sets playing to true
+			@param {object} song
+		*/
+
 		var playSong = function(song) {
 			currentBuzzObject.play();
 			song.playing = true;
