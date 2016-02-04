@@ -3,7 +3,10 @@
 		var SongPlayer = {};
 
 		// this gives us access to the album;
-		var currentAlbum = Fixtures.getAlbum();
+		var currentAlbum = Fixtures.getAlbum(); // fixtures service can get used throughout the app 
+		// have access to Fixtures in all files...
+		// controller only consumes services
+
 		/**
 			@desc Buzz object audio file 
 			@type {object}
