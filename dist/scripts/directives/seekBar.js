@@ -1,4 +1,4 @@
-(function(){
+(function($){
 	function seekBar($document) {
 		var calculatePercent = function (seekBar, event) {
 			var offsetX = event.pageX - seekBar.offset().left;
@@ -9,7 +9,7 @@
 			return offsetXPercent;
 		}
 		return {
-			tempateUrl: 'templates/directives/seek_bar.html',
+			templateUrl: 'templates/directives/seek_bar.html',
 			replace: true,
 			restrict: 'E',
 			scope: {},
@@ -27,8 +27,12 @@
 					return percent + "%";
 				};
 
+				scope.thumbStyle = function () {
+					// updates the position of the seek bar thumb
+				} // working on this function
+
 				scope.fillStyle = function () {
-					return {width: percentString()};
+					return { width: percentString() };
 				}
 
 				scope.onClickSeekBar = function(event) {
@@ -56,4 +60,4 @@
 	angular
 		.module('blocJams')
 		.directive('seekBar', ['$document', seekBar])
-})();
+})($);

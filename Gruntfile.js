@@ -70,12 +70,20 @@ module.exports = function(grunt) {
             }
         },
 
-        clean: ['./dist']
+        clean: ['./dist'],
+        chmod: {
+            options: {
+                mode: "544"
+            }, dist: {
+                src: ["dist/**"]
+            } // this is the folder we are targeting 
+        } // all the config info goes here
     });
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-hapi');
+    grunt.loadNpmTasks('grunt-chmod');
 
 };
