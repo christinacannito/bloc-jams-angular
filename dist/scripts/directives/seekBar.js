@@ -27,8 +27,11 @@
 					return percent + "%";
 				};
 
+				// calculating 
+
 				scope.thumbStyle = function () {
 					// updates the position of the seek bar thumb
+					return { left: percentString()};
 				} // working on this function
 
 				scope.fillStyle = function () {
